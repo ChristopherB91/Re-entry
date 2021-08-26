@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="PR.css">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <nav id="navagation">
+            <div1 class="pages"><a href=PR.html>Home page</a></div1>
+            <div2 class="pages"><a href=PR2.html>Jobs for reformed prisoners</a></div2>
+            <div3 class="pages"><a href=PR3.html>Feedback</a></div3>
+          </nav>
+    </head>
+    <body>
+        <br>
+        <div id='container2'>
+            <input type="text" placeholder="Subject" id="Subject">
+            <br>
+            <br>
+            <input type="text" placeholder="Body" id="Body">
+            <br>
+            <br>
+            <input type="submit" id="submit" onclick="submit()">
+        </div>
+
+        <script>
+        function submit(){
+        let text1 = document.getElementById("Body").value
+        let text2 = document.getElementById("Subject").value
+
+
+        Email.send({
+        SecureToken : "8bb97308-bc8b-4591-8fe9-d11b9f1b4407",
+        To :  'chrisbrowne91@gmail.com',
+        From : 'ccbrowne91@gmail.com',
+        Subject : text2,
+        Body : text1
+})
+  .then(
+          message => alert("Sent, Thank you for your feedback!")
+        )
+}
+    </script>
+    </body>
+</html>
